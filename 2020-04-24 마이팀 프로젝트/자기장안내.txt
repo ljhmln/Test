@@ -1,0 +1,77 @@
+출력 (Response) JSON
+키	타입	설명	비고
+kindex	Object	관측 값 목록	
+time	String	최종 수집 시각	yyyy-MM-dd HH:mm:ss
+currentP	Int	현재 Kp	
+currentK	Int	현재 Kk	
+max24P	Int	24시간내 최대 Kp	
+max24K	Int	24시간내 최대 Kk	
+recent	Array	최근 측정 값 목록	
+itme	String	수집 시각	yyyy-MM-dd HH:mm:ss
+kp	Int	측정된 Kp	
+kk	Int	측정된 Kk	
+lastUpdate	String	최종 업데이트 시각	밀리초
+error	Boolean	오류 여부	true 면 오류 발생
+errorCode	String	오류 발생 시 오류 코드	
+출력 샘플 (Response Sample) JSON
+{
+	error: false,
+	lastUpdate: "1444175400000",
+	errorCode: "NOERR",
+	kindex: {
+		time: "2015-10-06 21:00:00",
+		currentP: 4,
+		currentK: 5,
+		max24P: 4,
+		max24K: 5,
+		recent: [
+			{
+				time: "2015-10-06 21:00:00",
+				kp: 4,
+				kk: 5
+			},
+			{
+				time: "2015-10-06 18:00:00",
+				kp: 3,
+				kk: 4
+			},
+			{
+				time: "2015-10-06 15:00:00",
+				kp: 3,
+				kk: 3
+			},
+			{
+				time: "2015-10-06 12:00:00",
+				kp: 2,
+				kk: 2
+			},
+			{
+				time: "2015-10-06 09:00:00",
+				kp: 3,
+				kk: 2
+			},
+			{
+				time: "2015-10-06 06:00:00",
+				kp: 4,
+				kk: 2
+			},
+			{
+				time: "2015-10-06 03:00:00",
+				kp: 3,
+				kk: 2
+			},
+			{
+				time: "2015-10-06 00:00:00",
+				kp: 2,
+				kk: 1
+			}
+		]
+	}
+}
+			        			
+오류 코드 (Error Code)
+오류 코드	상황
+NOERR	오류 없음
+ERR001	수집 데이터 없음
+ERR002	수집 데이터 읽기 오류
+ERR003	수집 데이터 분석 오류
